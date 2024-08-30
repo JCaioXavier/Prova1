@@ -1,0 +1,138 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um valor inteiro: ");
+        int num = scan.nextInt();
+
+        for(int i = 1; i <= 10; i++){
+            System.out.printf("%d * %d = %d\n", i, num, num * i);
+        }
+    }
+}
+
+==============================================================
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite 1 se deseja cadastrar: ");
+        System.out.println("Digite 2 para entrar no sistema: ");
+        System.out.println("Digite 3 para sair do sistema: ");
+
+        int escolha = scan.nextInt();
+
+        if(escolha == 1) {
+            System.out.println("Qual o nome do usuario?");
+            String loginP = scan.next();
+
+            System.out.println("Digite a sua senha? ");
+            String senhaP = scan.next();
+
+            System.out.println("Digite 2 para entrar no sistema: ");
+            System.out.println("Digite 3 para sair do sistema: ");
+
+            escolha = scan.nextInt();
+
+            if(escolha == 2) {
+                System.out.println("Qual o nome do usuario?");
+                String login = scan.next();
+                while (!(login.equals(loginP))) {
+                    System.out.println("Usuario não encontrado! Digite novamente");
+                    System.out.println("Qual o nome do usuario?");
+                    login = scan.next();
+                }
+
+                System.out.println("Digite a sua senha: ");
+                String senha = scan.next();
+                while (!(senha.equals(senhaP))) {
+                    System.out.println("Senha incorreta! Digite novamente");
+                    System.out.println("Digite a sua senha: ");
+                    senha = scan.next();
+                }
+
+                System.out.println("Login efetuado com sucesso!");
+                return;
+            }
+        }
+        if(escolha == 3){
+            System.out.println("Fim do Programa.");
+            return;
+        }
+    }
+}
+
+
+==============================================================================================
+
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
+public class Main{
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um numero entre 100 e 1000: ");
+        int num = scan.nextInt();
+
+        if(num < 100 && num > 1000){
+            System.out.println("Numero invalido, digite novamente");
+            System.out.println("Digite novamente: ");
+            num = scan.nextInt();
+        }
+
+        for(Integer i = 1; i <= num; ++i){
+            if((i % 4) == 0){
+                System.out.println("PIN");
+            }
+            else if(i.toString().contains("4")){
+                System.out.println("PIN");
+            }
+            else{
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+===================================================================================
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int p = 0;
+        int n = 0;
+        int z = 0;
+
+        for(int i = 0; i < 10; ++i){
+            System.out.println("Digite 10 numeros inteiros: ");
+            int num = scan.nextInt();
+
+            if(num > 0){
+                p++;
+            }
+            else if(num < 0){
+                n++;
+            }
+            else{
+                z++;
+            }
+        }
+            System.out.printf("Positivos: %d\n", p);
+            System.out.printf("Negativos: %d\n", n);
+            System.out.printf("Zeros: %d", z);
+    }
+}
